@@ -14,11 +14,11 @@ val networkModule = module {
         AccessTokenAuthenticatorImpl(get())
     }
 
-    single<TokenRepository> {
-        TokenRepositoryImpl()
+    single<TokenProvider> {
+        TokenProviderImpl(get())
     }
 
-
-    //Services
     single { GwfApiService(get(), get()) }
+
+    single { GwfAuthService(get()) }
 }

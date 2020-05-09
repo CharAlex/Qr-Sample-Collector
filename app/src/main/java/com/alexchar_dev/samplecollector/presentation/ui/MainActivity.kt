@@ -2,6 +2,7 @@ package com.alexchar_dev.samplecollector.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.alexchar_dev.samplecollector.R
 import com.alexchar_dev.samplecollector.data.models.LoginRequest
 import com.alexchar_dev.samplecollector.data.network.GwfApiService
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         logInBtn.setOnClickListener {
             viewModel.login(LoginRequest("test@test.test", "testcandpass")).observe(this, androidx.lifecycle.Observer {
                 accessTkn.text = it.access
+                Toast.makeText(applicationContext, "log in success", Toast.LENGTH_SHORT).show()
             })
         }
 
