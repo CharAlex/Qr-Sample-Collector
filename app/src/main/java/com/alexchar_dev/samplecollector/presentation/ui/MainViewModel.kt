@@ -22,7 +22,7 @@ class MainViewModel(private val gwfAuthService: GwfAuthService) : ViewModel() {
             Prefs.putString("RefreshToken", response.refresh)
 
             emit(response)
-        } catch (e: HttpException) {
+        } catch (e: NoConnectivityException) {
             println("debug: exception $e")
         }
     }

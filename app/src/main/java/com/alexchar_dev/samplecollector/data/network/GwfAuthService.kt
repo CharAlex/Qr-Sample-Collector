@@ -2,6 +2,7 @@ package com.alexchar_dev.samplecollector.data.network
 
 import com.alexchar_dev.samplecollector.Constants
 import com.alexchar_dev.samplecollector.data.models.LoginRequest
+import com.alexchar_dev.samplecollector.data.models.RefreshRequest
 import com.alexchar_dev.samplecollector.data.network.response.LoginResponse
 import com.alexchar_dev.samplecollector.data.network.response.RefreshResponse
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -17,7 +18,7 @@ interface GwfAuthService {
     suspend fun login(@Body request: LoginRequest): LoginResponse
 
     @POST(Constants.TOKEN_REFRESH_URL)
-    fun refreshToken(@Body refreshTkn: String) : Call<RefreshResponse>
+    fun refreshToken(@Body refreshRequest: RefreshRequest) : Call<RefreshResponse>
 
     companion object {
         operator fun invoke(

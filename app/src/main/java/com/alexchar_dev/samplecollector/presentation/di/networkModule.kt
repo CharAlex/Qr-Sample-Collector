@@ -14,6 +14,9 @@ val networkModule = module {
         AccessTokenAuthenticatorImpl(get())
     }
 
+    single<AuthorizationInterceptor> {
+        AuthorizationInterceptorImpl(get())
+    }
     single<TokenProvider> {
         TokenProviderImpl(get())
     }
