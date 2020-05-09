@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sample Collector</string>
+    <string name="no_internet_connection">There is no internet connection, please try again.</string>
+</resources>
