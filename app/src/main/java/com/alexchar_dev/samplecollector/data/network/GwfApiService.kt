@@ -18,6 +18,10 @@ interface GwfApiService {
     @POST(Constants.REGISTER_URL)
     suspend fun registerQR(@Field("serial") serial: String, @Field("lat") lat: Double, @Field("lng") lng: Double ) : Response<String>
 
+    @FormUrlEncoded
+    @POST(Constants.REGISTER_URL)
+    suspend fun sendResult(@Field("serial") serial: String, @Field("result") result: Int) : Response<String>
+
     companion object {
         operator fun invoke(
             connectivityInterceptor: ConnectivityInterceptor,

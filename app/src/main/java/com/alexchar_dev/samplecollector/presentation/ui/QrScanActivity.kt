@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.util.isNotEmpty
 import com.alexchar_dev.samplecollector.R
+import com.alexchar_dev.samplecollector.presentation.utils.attachFragment
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -60,6 +61,10 @@ class QrScanActivity : AppCompatActivity() {
             viewModel.sendQrGeolocation(serialCode.text.toString(), x, y).observe(this, androidx.lifecycle.Observer {
                 Toast.makeText(applicationContext, "response code ${it.code()}", Toast.LENGTH_SHORT).show()
             })
+        }
+
+        sendResult.setOnClickListener {
+            supportFragmentManager.beginTransaction().add(R.id.fragment_container, QrResultFragment.newInstance(serialCode.text.toString())).commit()
         }
     }
 

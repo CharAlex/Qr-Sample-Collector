@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.QrResultFragment"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/serialId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="serial"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/sendResultBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/sendResultBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/serialId" />
+
+        <SeekBar
+            android:id="@+id/resultBar"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/lg_padding"
+            android:layout_height="wrap_content"
+            android:max="10"
+            app:layout_constraintBottom_toTopOf="@+id/sendResultBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/serialId" />
+
+        <TextView
+            android:id="@+id/resultView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result : 0"
+            app:layout_constraintBottom_toTopOf="@+id/resultBar"
+            app:layout_constraintEnd_toEndOf="@+id/resultBar"
+            app:layout_constraintStart_toStartOf="@+id/resultBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
